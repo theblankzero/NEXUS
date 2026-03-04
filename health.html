@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus // Neurological Impact Database</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <header class="glass-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-brain"></i> NEXUS<span>HEALTH</span>
+            </a>
+            <div class="search-container">
+                <i class="fa-solid fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search by game or genre...">
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Discover</a>
+                <a href="index.html#categories">Categories</a>
+                <a href="health.html" class="active">Brain Impact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="padding-bottom: 2rem;">
+            <div class="hero-content">
+                <h1 class="hero-title">Neurological <span class="text-gradient">Impact</span></h1>
+                <p class="hero-subtitle">Discover exactly how each game interacts with your brain. From dopamine hits to
+                    adrenaline spikes, see the psychological pros & cons below.</p>
+            </div>
+        </section>
+
+        <section class="vault-section" style="padding-top: 0;">
+            <div class="section-header">
+                <h2>Brain Stats Analyzer</h2>
+                <div class="filters filter-group-genre">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="shooter">Shooter</button>
+                    <button class="filter-btn" data-filter="mmorpg">MMORPG</button>
+                    <button class="filter-btn" data-filter="strategy">Strategy</button>
+                    <button class="filter-btn" data-filter="moba">MOBA</button>
+                    <button class="filter-btn" data-filter="fighting">Fighting</button>
+                </div>
+            </div>
+
+            <div class="game-grid" id="gameGrid">
+                <!-- Cards will be populated dynamically via JavaScript -->
+            </div>
+
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fa-solid fa-ghost"></i>
+                <p>No titles found matching your search. Try another term.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="justify-content: center; margin-bottom: 1rem;">
+                <i class="fa-solid fa-brain"></i> NEXUS<span>HEALTH</span>
+            </div>
+            <p>Your portal to infinite gaming universes. &copy; 2026 Nexus Vault. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/data.js"></script>
+    <script src="assets/data-augment.js"></script>
+    <script src="health.js"></script>
+</body>
+
+</html>

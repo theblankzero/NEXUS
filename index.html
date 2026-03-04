@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus // Game Franchise Vault</title>
+    <meta name="description"
+        content="Explore your favorite video game franchises, learn their lore, and find out where to get them on Steam, Xbox, PlayStation, and Nintendo.">
+    <meta name="keywords"
+        content="free games, pc games, browser games, steam games, xbox, playstation, nintendo, game database, game vault, mmorpg, shooter, strategy, moba, fighting game, battle royale, online gameplay, multiplayer, game sales, game discounts, neurological impact of games, dopamine gaming, free to play">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .view-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .view-section.active-view {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <header class="glass-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-gamepad" id="main-icon"></i> NEXUS<span id="main-span">VAULT</span>
+            </a>
+            <div class="search-container">
+                <i class="fa-solid fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search franchises, genres, titles...">
+            </div>
+            <nav class="nav-links">
+                <a href="#" id="tabDiscover" class="active">Discover</a>
+                <a href="#categories" id="tabCategories">Categories</a>
+                <a href="#" id="tabHealth">Brain Impact</a>
+                <a href="#" id="tabSales" style="color: #ffaa00;"><i class="fa-solid fa-fire"></i> Live Deals</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- DISCOVER VIEW -->
+        <div id="discoverView" class="view-section active-view">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Explore Universe Defining <span class="text-gradient">Franchises</span></h1>
+                    <p class="hero-subtitle">Dive deep into the ultimate game database. Discover the lore, genres, and
+                        exact sources to access these incredible masterpieces.</p>
+                </div>
+            </section>
+
+            <section class="vault-section">
+                <!-- Genres -->
+                <div class="section-header">
+                    <h2 id="categories">Categories</h2>
+                    <div class="filters filter-group-genre">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="shooter">Shooter</button>
+                        <button class="filter-btn" data-filter="mmorpg">MMORPG</button>
+                        <button class="filter-btn" data-filter="strategy">Strategy</button>
+                        <button class="filter-btn" data-filter="moba">MOBA</button>
+                        <button class="filter-btn" data-filter="fighting">Fighting</button>
+                        <button class="filter-btn" data-filter="battle royale">Battle Royale</button>
+                        <button class="filter-btn" data-filter="sports">Sports</button>
+                        <button class="filter-btn" data-filter="racing">Racing</button>
+                        <button class="filter-btn" data-filter="card game">Cards</button>
+                    </div>
+                </div>
+
+                <!-- Play Styles (New) -->
+                <div class="section-header">
+                    <h2 id="playstyles">Style of Playing</h2>
+                    <div class="filters filter-group-style">
+                        <button class="filter-btn active" data-style="all">All</button>
+                        <button class="filter-btn" data-style="solo">Solo</button>
+                        <button class="filter-btn" data-style="multiplayer">Multiplayer</button>
+                        <button class="filter-btn" data-style="co-op">Co-Op</button>
+                    </div>
+                </div>
+
+                <!-- Platforms -->
+                <div class="section-header">
+                    <h2 id="platforms">Platforms</h2>
+                    <div class="filters filter-group-platform">
+                        <button class="filter-btn active" data-platform="all">All</button>
+                        <button class="filter-btn" data-platform="pc">PC / Windows</button>
+                        <button class="filter-btn" data-platform="browser">Web Browser</button>
+                    </div>
+                </div>
+
+                <div class="game-grid" id="gameGrid">
+                    <!-- Cards will be populated dynamically via JavaScript -->
+                </div>
+
+                <div class="no-results" id="noResults" style="display: none;">
+                    <i class="fa-solid fa-ghost"></i>
+                    <p>No franchises found matching your search. Try another term.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- BRAIN IMPACT VIEW -->
+        <div id="healthView" class="view-section">
+            <section class="hero" style="padding-bottom: 2rem;">
+                <div class="hero-content">
+                    <h1 class="hero-title">Neurological <span class="text-gradient">Impact</span></h1>
+                    <p class="hero-subtitle">Discover exactly how each game interacts with your brain. From dopamine
+                        hits to adrenaline spikes, see the psychological pros & cons below.</p>
+                </div>
+            </section>
+
+            <section class="vault-section" style="padding-top: 0;">
+                <div class="section-header">
+                    <h2>Brain Stats Analyzer</h2>
+                    <div class="filters filter-group-health-genre">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="shooter">Shooter</button>
+                        <button class="filter-btn" data-filter="mmorpg">MMORPG</button>
+                        <button class="filter-btn" data-filter="strategy">Strategy</button>
+                        <button class="filter-btn" data-filter="moba">MOBA</button>
+                        <button class="filter-btn" data-filter="fighting">Fighting</button>
+                        <button class="filter-btn" data-filter="battle royale">Battle Royale</button>
+                    </div>
+                </div>
+
+                <div class="game-grid" id="healthGrid">
+                    <!-- Brain Impact cards go here -->
+                </div>
+
+                <div class="no-results" id="healthNoResults" style="display: none;">
+                    <i class="fa-solid fa-ghost"></i>
+                    <p>No titles found matching your search. Try another term.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- LIVE SALES VIEW -->
+        <div id="salesView" class="view-section">
+            <section class="hero"
+                style="padding-bottom: 2rem; background: radial-gradient(circle at center, rgba(139, 0, 0, 0.4) 0%, transparent 70%);">
+                <div class="hero-content">
+                    <h1 class="hero-title">Live <span class="text-gradient">Sales Tracker</span></h1>
+                    <p class="hero-subtitle">Constantly scanning the web for newly uploaded premium games, DLCs, and
+                        time-limited discounts across all platforms.</p>
+                </div>
+            </section>
+
+            <section class="vault-section" style="padding-top: 0;">
+                <div class="section-header">
+                    <h2>Trending Discounts</h2>
+                </div>
+
+                <div class="game-grid" id="salesGrid">
+                    <!-- Sales cards will load here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- SEO TAG CLUSTER FOR WEB CRAWLERS -->
+    <section class="seo-cluster"
+        style="background: #0a0a0a; padding: 2rem 5%; font-size: 0.65rem; color: #444; border-top: 1px solid #222;">
+        <h4 style="color: #666; margin-bottom: 0.5rem; text-transform: uppercase;">Top Searched Game Terminology</h4>
+        <p>
+            Best Free PC Games 2026, Free Multiplayer Browser Games, Download MMORPG without Steam, Best Co-Op Shooters,
+            Free Survival Games PC, MacOS Compatible Games, M1 Mac Native Gaming, Action RPG Downloads, Free Top Down
+            Strategy, MOBA Tier List, Game Key Sales, Discounted PC Keys, 100% Free Game Library, Open World Sandbox
+            MMO, eSports Fighting Games Free, Lowest Ping Servers MOBA, Anime Action Games, Best Free Battle Royale,
+            Dopamine Hit Games, Fast Reflex Games, Games Good For Brain Focus, No Download In Browser WebGL Games, HTML5
+            Free Games, FPS Tracker, Nexus Vault Gaming Database.
+        </p>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="justify-content: center; margin-bottom: 1rem;">
+                <i class="fa-solid fa-gamepad" id="footer-icon"></i> NEXUS<span id="footer-span">VAULT</span>
+            </div>
+            <p>Your portal to infinite gaming universes. &copy; 2026 Nexus Vault. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/data.js"></script>
+    <script src="assets/data-augment.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
